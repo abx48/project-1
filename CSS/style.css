@@ -1490,9 +1490,12 @@
     }
 
     #contact-container .contact-container-form-box .form-input input,
-    .contact-container-form-box .form-input select,
     .contact-container-form-box .form-input textarea {
         width: 95%;
+    }
+    
+    #contact-container .contact-container-form-box .form-input select {
+        width: 100%
     }
 
 
@@ -1633,6 +1636,10 @@
     #contact-container-alert i {
         margin: 0px 15px;
         font-size: 30px;
+    }
+
+    #contact-container .contact-container-form-box .form-input select {
+        width: 103%
     }
 }
 
