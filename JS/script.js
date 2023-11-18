@@ -107,7 +107,7 @@ $(function () {
 });
 
 
-// <======== JS Program For Adding Contact-Container-Alert ========>
+// <======== JS Program to Send all the Data of the Contact-Container Form to Google Sheet ========>
 const contactContainerForm = document.querySelector("#contact-container .contact-container-form form");
 const contactContainerFormAllInputs = document.querySelectorAll("#contact-container .contact-container-form .form-input .contact-container-form-inputs");
 const contactContainerFormSelect = document.querySelector("#contact-container .contact-container-form .form-input select");
@@ -116,6 +116,12 @@ const contactContainerAlertIcon = document.querySelector("#contact-container-ale
 
 contactContainerForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    let data = new FormData(contactContainerForm);
+    fetch('https://script.google.com/macros/s/AKfycbweOWg8Prw1BI5AWuhibiKe3RgMzRWr3wiVfuqtDSu5V5hR_FYEKvu4AqAvtI24xpUs/exec', {
+        method: "POST",
+        body: data,
+    })
+        .then(res => res.text())
     contactContainerFormAllInputs.forEach((input) => {
         input.value = "";
     })
